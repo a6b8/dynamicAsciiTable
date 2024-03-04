@@ -8,6 +8,7 @@ class DynamicTable {
     #config
     #state
     #templates
+    #isTableFitting
     #silent
 
 
@@ -29,14 +30,26 @@ class DynamicTable {
         this.#lines = new Set
         this.#state = this.#addState( { columnNames, columnLengths, columnAlignments, headerAlignment, addAsDefault } )
         this.#templates = this.#addTemplates()
+        this.#isTableFitting = this.#addTableFitting()
+        this.#addResizeListener()
+
 
         return true
     }
 
 
     print() {
-        this.#state['nonce'] === 0 ? this.#printTableHeader() : ''
-        this.#printTableContent()
+        if( this.#isTableFitting['print'] ) {
+            this.#state['nonce'] === 0 ? this.#printTableHeader() : ''
+            this.#printTableContent()
+        } else if( this.#isTableFitting['messageShown'] === false ) {
+            console.log( `The terminal width is insufficient for printing the table. Resizing it will disrupt the continuous update.` )
+            this.#isTableFitting['messageShown'] = true
+            this.#state['nonce'] = 0
+        } else {
+            return false
+        }
+    
         return true
     }
 
@@ -137,6 +150,33 @@ class DynamicTable {
             }, [] )
 
         this.#state['nonce'] += 1
+        return true
+    }
+
+
+    #addTableFitting() {
+        const struct = {
+            'messageShown': false,
+            'print': null
+        }
+
+        if( process.stdout.columns > this.#templates['firstLine'].length ) {
+            struct['print'] = true
+        } else {
+            struct['print'] = false
+        }
+
+        return struct
+    }
+
+
+    #addResizeListener() {
+        process.stdout.on(
+            'resize', 
+            () => {
+                this.#isTableFitting = this.#addTableFitting()
+            } 
+        )
         return true
     }
 
@@ -331,7 +371,6 @@ class DynamicTable {
 
 
     #insertStr( { str, style } ) {
-        // 'UpperCase', 'LowerCase', 'Capitalize', 'None'
         switch( style ) {
             case 'UpperCase':
                 str = str.toUpperCase()

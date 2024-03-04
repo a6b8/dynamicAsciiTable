@@ -1,11 +1,5 @@
 import { DynamicTable } from '../src/DynamicTable.mjs'
 
-process.stdout.on('resize', () => {
-    console.log('screen size has changed!');
-    console.log(`${process.stdout.columns}x${process.stdout.rows}`);
-} )
-
-
 const columnNames = [ 'nr', 'deployments', 'authList', 'accumulatorList' ]
 const columnLengths = [ 5, 12, 12, 15 ]
 const columnAlignments = [ 'center', 'right', 'right', 'right' ]
