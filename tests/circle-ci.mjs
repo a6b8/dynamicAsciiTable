@@ -1,12 +1,12 @@
 import { DynamicTable } from '../src/DynamicTable.mjs'
 
-const columnNames = [ 'nr', 'deployments', 'authList', 'accumulatorList' ]
-const columnLengths = [ 5, 12, 12, 15 ]
-const columnAlignments = [ 'center', 'right', 'right', 'right' ]
-const headerAlignment = 'left'
-
 const dt = new DynamicTable()
-dt.init( { columnNames, columnLengths, columnAlignments, headerAlignment } )
+dt.init( { 
+    'columnNames': [ 'nr', 'deployments', 'authList', 'accumulatorList' ], 
+    'columnLengths': [ 5, 12, 12, 15 ], 
+    'columnAlignments': [ 'center', 'right', 'right', 'right' ], 
+    'headerAlignment': 'left'
+} )
 const test = dt.health()
 
 if( test ) {
