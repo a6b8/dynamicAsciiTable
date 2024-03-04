@@ -26,7 +26,7 @@ To authentically represent the usage, you can import a sample dataset with `getD
 
 **Terminal**
 ```bash
-npm i dynamicAsciiTable
+npm i dynamic-ascii-table
 ```
 
 **Code**
