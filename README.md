@@ -13,6 +13,11 @@ This module helps to display a dynamic table in the terminal. The module was dev
 ## Quickstart
 To authentically represent the usage, you can import a sample dataset with `getDemoData`, which then synchronously inserts the data and updates the table.
 
+```bash
+npm i dynamicAsciiTable
+```
+
+
 ```js
 import { DynamicAsciiTable, getDemoData } from 'dynamicAsciiTable'
 
