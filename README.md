@@ -1,4 +1,4 @@
-[![CircleCI](https://img.shields.io/circleci/build/github/a6b8/multiThreadz/main)]() ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+[![CircleCI](https://img.shields.io/circleci/build/github/a6b8/dynamicAsciiTable/main)]() ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 # DynamicAsciiTable
 This module helps to display a dynamic table in the terminal. The module was developed for applications that need to monitor a large number of different tasks using multithreading and asynchronous queries.
