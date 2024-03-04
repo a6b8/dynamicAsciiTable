@@ -19,7 +19,7 @@ npm i dynamicAsciiTable
 ```
 
 **Code**
-```js
+```javascript
 import { DynamicAsciiTable, getDemoData } from 'dynamicAsciiTable'
 
 const demoData = getDemoData(1000, 100)
