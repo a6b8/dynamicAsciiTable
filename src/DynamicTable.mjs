@@ -97,6 +97,11 @@ class DynamicTable {
     }
 
 
+    health() {
+        return true
+    }
+
+
     #printTableHeader() {
         console.log( this.#templates['firstLine'] ) 
         console.log( this.#templates['header'] )
