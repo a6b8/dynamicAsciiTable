@@ -1,6 +1,6 @@
 [![CircleCI](https://img.shields.io/circleci/build/github/a6b8/multiThreadz/main)]() ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-# DynamicTable
+# DynamicAsciiTable
 This module helps to display a dynamic table in the terminal. The module was developed for applications that need to monitor a large number of different tasks using multithreading and asynchronous queries.
 
 ## Features:
@@ -36,7 +36,7 @@ for (const row of demoData['rows']) {
 This example shows how to query public Nodes with Node.js.
 
 ## Table of Contents
-- [DynamicTable](#dynamictable)
+- [DynamicAsciiTable](#dynamicasciitable)
   - [Features:](#features)
   - [Quickstart](#quickstart)
     - [Code](#code)
