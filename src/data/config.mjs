@@ -42,12 +42,12 @@ const config = {
                 'types': [ 'left', 'center', 'right' ]
             },
             'style': {
-                'use': 'Capitalize',
+                'use': 'None',
                 'types': [ 'UpperCase', 'LowerCase', 'Capitalize', 'None' ]
             }
         },
         'cell': {
-            'padding': 2,
+            'padding': 1,
             'defaultAlignment': 'left'
         },
         'column': {

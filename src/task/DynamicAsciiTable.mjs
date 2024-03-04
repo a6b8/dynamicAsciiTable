@@ -1,9 +1,9 @@
 import readline from 'readline'
-import { printMessages } from './helpers/mixed.mjs'
-import { config } from './data/config.mjs'
+import { printMessages } from '../helpers/mixed.mjs'
+import { config } from '../data/config.mjs'
 
 
-class DynamicTable {
+class DynamicAsciiTable {
     #lines
     #config
     #state
@@ -33,7 +33,6 @@ class DynamicTable {
         this.#isTableFitting = this.#addTableFitting()
         this.#addResizeListener()
 
-
         return true
     }
 
@@ -49,7 +48,7 @@ class DynamicTable {
         } else {
             return false
         }
-    
+
         return true
     }
 
@@ -216,7 +215,7 @@ class DynamicTable {
         if( addAsDefault.includes( 'columnAlignments' ) ) {
             struct['columnAlignments'] = new Array( columnNames.length )
                 .fill( '' )
-                .map( ( a, index ) => this.#config['table']['alignment']['default'] )
+                .map( ( a, index ) => this.#config['table']['cell']['defaultAlignment'] )
         } else {
             struct['columnAlignments'] = columnAlignments
         }
@@ -501,10 +500,10 @@ class DynamicTable {
 
         if( columnAlignments === undefined ) {
             // messages.push( `columnAlignments is undefined` )
-            // comments.push( `columnAlignments is undefined. Using default alignment for all columns '${this.#config['table']['alignment']['default']}'.` )
+            comments.push( `columnAlignments is undefined. Using default alignment for all columns '${this.#config['table']['column']['defaultAlignment']}'.` )
             addAsDefault.push( 'columnAlignments' )
         } else if( !Array.isArray( columnAlignments ) ) {
-            comments.push( `columnAlignments is not type of 'array'. Using default alignment for all columns '${this.#config['table']['alignment']['default']}'.` )
+            comments.push( `columnAlignments is not type of 'array'. Using default alignment for all columns '${this.#config['table']['column']['defaultAlignment']}'.` )
             addAsDefault.push( 'columnAlignments' )
         } else {
             const test3 = columnAlignments
@@ -596,4 +595,4 @@ class DynamicTable {
 }
 
 
-export { DynamicTable }
+export { DynamicAsciiTable }

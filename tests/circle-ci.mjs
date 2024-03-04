@@ -1,12 +1,9 @@
-import { DynamicTable } from '../src/DynamicTable.mjs'
+import { DynamicAsciiTable, getDemoData } from '../src/index.mjs'
 
-const dt = new DynamicTable()
-dt.init( { 
-    'columnNames': [ 'nr', 'deployments', 'authList', 'accumulatorList' ], 
-    'columnLengths': [ 5, 12, 12, 15 ], 
-    'columnAlignments': [ 'center', 'right', 'right', 'right' ], 
-    'headerAlignment': 'left'
-} )
+const demoData = getDemoData( 1000, 25 ) 
+const dt = new DynamicAsciiTable()
+const { columnNames, columnLengths, columnAlignments, headerAlignment} = demoData['init']
+dt.init( { columnNames, columnLengths, columnAlignments, headerAlignment } )
 const test = dt.health()
 
 if( test ) {

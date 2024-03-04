@@ -1,35 +1,24 @@
-import { DynamicTable } from '../src/DynamicTable.mjs'
+import { DynamicAsciiTable, getDemoData } from '../src/index.mjs'
 
-const columnNames = [ 'nr', 'deployments', 'authList', 'accumulatorList' ]
-const columnLengths = [ 5, 12, 12, 15 ]
-const columnAlignments = [ 'center', 'right', 'right', 'right' ]
-const headerAlignment = 'left'
+const demoData = getDemoData( 1000, 100 ) 
+const delay = ( ms ) => new Promise( resolve => setTimeout( resolve, ms ) )
  
-
-const dt = new DynamicTable()
+const dt = new DynamicAsciiTable()
+const { columnNames, columnLengths, columnAlignments, headerAlignment} = demoData['init']
 dt.init( { columnNames, columnLengths, columnAlignments, headerAlignment } )
 
-const delay = ( ms ) => new Promise( resolve => setTimeout( resolve, ms ) )
-for( let i = 0; i < 10000; i++ ) {
-    const rowIndex = i % 10
-    const randomIndex = Math.floor(Math.random() * columnNames.length)
+for( const row of demoData['rows'] ) {
+    const { rowIndex, columnName, value } = row
+    console.log( row )
+    dt.setValue( { rowIndex, columnName, value } )
+    dt.print()
+    await delay( 10 )
+    process.exit( 1 )
+}
 
-    const columnName = columnNames[ randomIndex ]
+/*
     const [ isNotNull, value ] = dt.getValue( {
         rowIndex,
         columnName
     } )
-
-    dt.setValue( {
-        rowIndex,
-        columnName, 
-        'value': isNotNull ? value + i : i
-    } )
-
-    await delay( 20 )
-    // dt.printTableContent2()
-    dt.print()
-}
-
-
-// console.log( dt.getValue() )
+*/
