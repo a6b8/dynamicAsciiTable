@@ -31,7 +31,7 @@ npm i dynamicAsciiTable
 
 **Code**
 ```javascript
-import { DynamicAsciiTable, getDemoData } from 'dynamicAsciiTable'
+import { DynamicAsciiTable, getDemoData } from 'dynamic-ascii-table'
 
 const demoData = getDemoData(1000, 100)
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
@@ -94,7 +94,7 @@ constructor( silent )
 
 **Example**
 ```js
-import { DynamicAsciiTable } from 'dynamicAsciiTable'
+import { DynamicAsciiTable } from 'dynamic-ascii-table'
 const dt = new DynamicAsciiTable() 
 ```
 
@@ -127,7 +127,7 @@ true
 
 **Returns**
 ```js
-import { DynamicAsciiTable, getDemoData } from '../src/index.mjs'
+import { DynamicAsciiTable, getDemoData } from 'dynamic-ascii-table'
 
 const demoData = getDemoData( 1000, 100 ) 
 const dt = new DynamicAsciiTable()
@@ -155,7 +155,7 @@ This table describes the usage of the `.print()` method.
 
 **Example**
 ```js
-import { DynamicAsciiTable } from '../src/index.mjs'
+import { DynamicAsciiTable } from 'dynamic-ascii-table'
 
 const delay = ( ms ) => new Promise( resolve => setTimeout( resolve, ms ) )
  
@@ -199,7 +199,7 @@ With this method, the table can be filled with content.
 
 **Example**
 ```js
-import { DynamicAsciiTable } from '../src/index.mjs'
+import { DynamicAsciiTable } from 'dynamic-ascii-table'
 
 const dt = new DynamicAsciiTable()
 dt.init( { 'columnNames': [ 'a' ] } )
@@ -229,7 +229,7 @@ With this method, a value can be output from the internal memory.
 
 **Example**
 ```js
-import { DynamicAsciiTable } from '../src/index.mjs'
+import { DynamicAsciiTable } from 'dynamic-ascii-table'
 
 const dt = new DynamicAsciiTable()
 dt.init( { 'columnNames': [ 'a', 'b', 'c' ] } )
@@ -262,7 +262,7 @@ This table describes the usage of the `getConfig` method.
 
 **Example**
 ```js
-import { DynamicAsciiTable } from '../src/index.mjs'
+import { DynamicAsciiTable } from 'dynamic-ascii-table'
 
 const dt = new DynamicAsciiTable()
 dt.init( { 'columnNames': [ 'a', 'b', 'c' ] } )
@@ -290,7 +290,7 @@ With this method, the configuration can be changed. It is recommended to first l
 
 **Example**
 ```js
-import { DynamicAsciiTable } from '../src/index.mjs'
+import { DynamicAsciiTable } from 'dynamic-ascii-table'
 
 const dt = new DynamicAsciiTable()
 dt.init( { 'columnNames': [ 'a', 'b', 'c' ] } )
@@ -320,7 +320,7 @@ This method is an internal function to check if the class is loading properly.
 
 **Example**
 ```js
-import { DynamicAsciiTable } from '../src/index.mjs'
+import { DynamicAsciiTable } from 'dynamic-ascii-table'
 
 const dt = new DynamicAsciiTable()
 dt.init( { 'columnNames': [ 'a', 'b', 'c' ] } )

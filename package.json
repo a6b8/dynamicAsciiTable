@@ -1,5 +1,5 @@
 {
-  "name": "dynamicAsciiTable",
+  "name": "dynamic-ascii-table",
   "version": "1.0.0",
   "description": "DynamicAsciiTable efficiently displays dynamic tables in terminals, ideal for applications with complex task monitoring requirements. It offers customizable formatting and seamless data handling.",
   "main": "./src/index.mjs",
