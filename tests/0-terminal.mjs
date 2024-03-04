@@ -9,11 +9,9 @@ dt.init( { columnNames, columnLengths, columnAlignments, headerAlignment } )
 
 for( const row of demoData['rows'] ) {
     const { rowIndex, columnName, value } = row
-    console.log( row )
     dt.setValue( { rowIndex, columnName, value } )
     dt.print()
     await delay( 10 )
-    process.exit( 1 )
 }
 
 /*

@@ -3,6 +3,17 @@
 # DynamicAsciiTable
 This module helps to display a dynamic table in the terminal. The module was developed for applications that need to monitor a large number of different tasks using multithreading and asynchronous queries.
 
+```
+┌───────┬──────────────┬──────────────┬─────────────────┐
+│ nr    │ deployments  │ authList     │ accumulatorList │
+├───────┼──────────────┼──────────────┼─────────────────┤
+│ 7     │          472 │          404 │             332 │
+│ 8     │          466 │          406 │             328 │
+│ 9     │          468 │          384 │             384 │
+│ 10    │          458 │          400 │                 │
+└───────┴──────────────┴──────────────┴─────────────────┘
+```
+
 ## Features:
 - Efficient resource usage.
 - Formatting and alignment of the header and content areas.
