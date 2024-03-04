@@ -284,7 +284,7 @@ dt.setConfig( { config } )
 
 **Returns**
 ```js
-
+true
 ```
 
 ### health()
